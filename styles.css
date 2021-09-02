@@ -1,7 +1,11 @@
+html {
+    overflow-x: hidden;
+}
+
 body {
     padding: 0;
     margin: 0;
-    font-family: Montserrat;
+    font-family: 'Montserrat', sans-serif;
     font-style: normal;
 }
 
@@ -14,11 +18,11 @@ h1 {
 
 .headerImg {
     width: auto;
-    height: 800px;
+    height: 75vh;
     background-size: cover;
-    background-image: url("images/header.jpg");
+    background-image: url('images/header.jpg');
     background-position: top right;
-    background-repeat: no-repeat ;
+    background-repeat: no-repeat;
 }
 
 .logo {
@@ -40,7 +44,7 @@ header {
 }
 
 button {
-    font-family: Montserrat;
+    font-family: 'Montserrat', sans-serif;
     font-style: normal;
     font-weight: bold;
     color: white;
@@ -48,6 +52,12 @@ button {
     padding: 16px 24px;
     border: none;
     align-items: center;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: #f07a85;
 }
 
 h2 {
@@ -84,7 +94,15 @@ h2 {
     margin-left: 2rem;
 }
 
-.textUmedien {
+.textUmedien1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5rem;
+    float: left;
+}
+
+.textUmedien2 {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -110,29 +128,173 @@ h2 {
 
 .gallery {
     display: grid;
-    grid-template-columns: auto auto auto auto;
+    grid-template: auto/ auto auto auto auto;
+    grid-gap: 10px;
 }
 
 .galleryImg {
-    max-width: 352px;
-    height: auto;
     margin-bottom: 2rem;
 }
 
 footer {
     background-color: #54865C;
     width: 100%;
-    height: 79px;
     position: absolute;
 }
 
 .footerTextLeft {
     color: #FFFFFF;
     float: left;
+    margin-bottom: 2.5rem;
+    margin-top: 2.5rem;
 }
 
 .footerTextRight {
     color: #FFFFFF;
-    text-align: right;
     float: right;
+    margin-bottom: 2.5rem;
+    margin-top: 2.5rem;
+}
+
+@media screen and (max-width: 768px) {
+
+    .headerImg {
+        background: #f0f0f0;
+        overflow: auto;
+        clear: both;
+        height: 35vh;
+
+    }
+
+    .containerHeader {
+        align-items: center;
+        padding: 0;
+        margin: 0;
+    }
+
+
+    h1 {
+        font-size: 32px;
+        line-height: 40px;
+        text-align: center;
+        margin-top: 1rem;
+    }
+
+    h2 {
+        font-size: 24px;
+        line-height: 32px;
+        text-align: center;
+        margin-top: 2rem;
+    }
+
+    .textIntro {
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    .logo {
+        width: 96px;
+        height: auto;
+        position: center;
+        display: block;
+        margin: 2rem auto auto;
+    }
+
+    button {
+        flex-direction: row;
+        padding: 16px;
+        display: block;
+        margin: 2rem auto auto;
+    }
+
+    .textUmedien1 {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    .textUmedien2 {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 2rem;
+    }
+
+    .textUmedien2 > .imgboxRight {
+        order: 1;
+    }
+
+    .textUmedien2 > .textLeftAlignedBUTleft {
+        order: 2;
+    }
+
+    .image {
+        width: 100vw;
+        height: auto;
+    }
+
+    .imgboxLeft {
+        float: none;
+        margin: 0 0 2rem;
+    }
+
+    .imgboxRight {
+        margin: 0 0 2rem;
+        float: none;
+    }
+
+    .containerMainText {
+        padding: 0;
+        margin-bottom: 24px;
+    }
+
+    .textLeftAligned {
+        padding: 0 2rem;
+        text-align: center;
+    }
+
+    .textLeftAlignedBUTleft {
+        padding: 0 2rem;
+        text-align: center;
+    }
+
+    .footerTextLeft {
+        text-align: center;
+        float: none;
+        margin: 1rem;
+    }
+
+    footer {
+        margin-top: 1rem;
+    }
+
+    .footerTextRight {
+        text-align: center;
+        float: none;
+        margin: 1rem;
+    }
+
+    .containerHeader > .footerTextLeft {
+        order: 1;
+    }
+
+    .containerHeader > .footerTextRight {
+        order: 2;
+    }
+
+    .gallery {
+        display: grid;
+        grid-template: auto/auto;
+        grid-gap: 10px;
+    }
+
+    .galleryImg {
+        width: 100vw;
+        margin: 0;
+    }
+
+    header {
+        margin-bottom: 2rem;
+    }
+
 }
